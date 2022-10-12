@@ -1,0 +1,19 @@
+.send_binh_luan{
+    height: 50px;
+    width: 100%;
+    background-color: #8f8f8f;
+}
+#input_binh_luan{
+    height: 40px;
+    width: 60%;
+    margin: 5px 20px;
+    padding-left: 1em;
+}
+#button_binh_luan{
+    height: 40px;
+    width: 75px;
+    border-radius: 5px;
+    background-color: #0d6efd;
+    color: white;
+    border: white 1px solid;
+}

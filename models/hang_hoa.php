@@ -4,6 +4,7 @@ function hang_hoa_all()
 {
     $conn = connection();
     $sql = "SELECT * FROM hang_hoa";
+//    $sql = "SELECT hang_hoa.*,loai.ten_loai FROM hang_hoa inner join loai on hang_hoa.ma_loai=loai.ma_loai;";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,3 +52,51 @@ function top_hang_hoa(){
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function hang_hoa_by_loai($ma_loai){
+    $conn = connection();
+    $sql = "SElECT * FROM hang_hoa WHERE ma_loai=$ma_loai";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+
+function search_hang_hoa_by_ten($ten_hh){
+    $conn = connection();
+    $sql = "SELECT * FROM hang_hoa WHERE LOWER(TRIM(ten_hh)) like '%$ten_hh%'";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function so_luong_hang_hoa_by_loai($ma_loai){
+    $conn = connection();
+    $sql = "SELECT COUNT(ten_hh) as so_luong FROM hang_hoa WHERE ma_loai=$ma_loai";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+function so_luong_hang_hoa(){
+    $conn = connection();
+    $sql = "SELECT COUNT(ma_hh) as so_luong_hang FROM hang_hoa";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function thong_ke_hang_hoa(){
+    $conn = connection();
+    $sql = "SELECT ten_loai, COUNT(hh.ma_loai) AS size_product FROM hang_hoa as hh,loai as lo WHERE hh.ma_loai=lo.ma_loai GROUP BY hh.ma_loai;";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+

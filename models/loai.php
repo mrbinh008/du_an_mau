@@ -47,3 +47,13 @@ function loai_dl($ma_loai)
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 }
+
+//thống kê
+function so_luong_loai(){
+    $conn = connection();
+    $sql = "SELECT COUNT(ma_loai) as so_luong_lo FROM loai";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}

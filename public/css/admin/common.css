@@ -118,3 +118,6 @@ table thead tr {
   background-color: #b7f0b7;
   color: #333;
 }
+.form-group span{
+  color: red;
+}

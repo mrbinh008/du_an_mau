@@ -1,0 +1,23 @@
+.thong_ke{
+    width: 100%;
+}
+.thong_ke_user{
+    background-color: #11a5ff;
+    height: 70px;
+}
+.thong_ke_hang_hoa{
+    background-color: #b7f0b7;
+    height: 70px;
+}
+.thong_ke_loai{
+    background-color: aquamarine;
+    height: 70px;
+}
+.icon{
+    font-size: 30px;
+    margin-left: 2em;
+}
+caption{
+    font-weight: 600;
+    font-size: larger;
+}

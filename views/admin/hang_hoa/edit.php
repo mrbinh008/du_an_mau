@@ -1,5 +1,5 @@
 <?php include_once "models/hang_hoa.php";
-
+if (isset($error)) {extract($error);}
 extract($hang_hoa);
 ?>
 <?php include_once "views/admin/layout/header.php";?>
@@ -20,12 +20,14 @@ extract($hang_hoa);
                     <div class="form-group">
                         <label for="">Tên hàng hóa</label>
                         <input class="form-control" type="text" name="ten_hh" placeholder="tên hàng" value="<?=$ten_hh?>">
+                        <?php if (isset($ten_hang_err)) echo '<span>'.$ten_hang_err.'</span>'?>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="">Đơn giá</label>
                         <input class="form-control" type="number" name="don_gia" min="0" value="<?=$don_gia?>">
+                        <?php if (isset($don_gia_err)) echo '<span>'.$don_gia_err.'</span>'?>
                     </div>
                 </div>
                 <div class="col">
@@ -39,12 +41,19 @@ extract($hang_hoa);
                                 </option>
                             <?php endforeach ?>
                         </select>
+                        <?php if (isset($loai_err)) echo '<span>'.$loai_err.'</span>'?>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="">Giảm giá</label>
                         <input class="form-control" type="number" name="giam_gia" placeholder="Theo phần trăm" value="<?=$giam_gia?>">
+                    </div>
+                </div>
+                <div class="col" hidden>
+                    <div class="form-group">
+
+                        <input class="form-control" type="text" name="hinh"  value="<?=$hinh?>" >
                     </div>
                 </div>
                 <div class="col">

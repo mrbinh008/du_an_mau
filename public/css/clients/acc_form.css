@@ -1,0 +1,39 @@
+.btn_submit_edit{
+    margin: 2em;
+}
+.btn_edit{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px ;
+    background-color: #11a5ff;
+}
+.btn_edit:nth-child(2){
+    width: 150px;
+}
+.btn_edit:hover{
+    background-color: #45f3ff;
+    color: white;
+}
+.image_edit{
+    width: 250px;
+    height: 250px;
+}
+.form-control{
+    width: 300px;
+    height: 45px;
+}
+.form_edit{
+    margin: 0 2em;
+}
+.form-group label{
+    font-weight: 500;
+}
+.form{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    margin: 0 24em;
+}
+.form-group span{
+    color: red;
+}

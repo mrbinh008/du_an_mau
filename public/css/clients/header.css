@@ -4,22 +4,22 @@
     box-sizing: border-box;
 }
 
-ul {
+.navbar_menu {
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-li{
+.nav_item{
     list-style: none;
     padding: 0.3em 1em;
 
 }
-a{
+.nav_link{
     color: black;
     text-decoration: none;
     font-size: 20px;
 }
-li:hover{
-    background-color: gray;
+.nav_item:hover{
+    /*background-color: gray;*/
     color: white;
 }
